@@ -10,11 +10,42 @@ namespace Laba_1_Csharp
     {
         static void Main(string[] args)
         {
-            double x, y, result;
+            double x = 0, y=0, result;
+            bool Value = false;
+
+
             Console.WriteLine("Enter your 1 number\n");
-            x = double.Parse(Console.ReadLine());
+
+            do
+            {
+                try
+                {
+                    x = double.Parse(Console.ReadLine());
+                    Value = true;
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Ошибка!");
+                }
+            } while (!Value);
+
             Console.WriteLine("Enter your 2 number \n");
-            y = double.Parse(Console.ReadLine());
+            Value = false;
+            do { 
+                try
+                {
+                    y = double.Parse(Console.ReadLine());
+                    Value = true;
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Ошибка!");
+                }
+            } while (!Value) ;
+
+            Console.Clear();
+            
+
             result = x + y;
             Console.WriteLine("Your result =  " + result);
             Console.ReadKey();
